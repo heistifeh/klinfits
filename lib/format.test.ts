@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { fill, formatNaira, isPlaceholder, show } from './format';
+import { fill, formatCm, formatNaira, formatRange, isPlaceholder, show } from './format';
 
 describe('format', () => {
   it('formats naira with the sign and a comma', () => {
@@ -13,6 +13,11 @@ describe('format', () => {
     expect(show('M')).toBe('M');
     expect(isPlaceholder({ todo: 'X' })).toBe(true);
     expect(isPlaceholder('X')).toBe(false);
+  });
+
+  it('formats measurements in cm', () => {
+    expect(formatRange([92, 96])).toBe('92–96 cm');
+    expect(formatCm(67)).toBe('67 cm');
   });
 
   it('fills tokens and leaves unknown ones alone', () => {

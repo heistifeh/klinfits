@@ -1,6 +1,7 @@
 import { Features } from '@/components/sections/Features';
 import { GlobalBar } from '@/components/sections/GlobalBar';
 import { Hero } from '@/components/sections/Hero';
+import { Sizes } from '@/components/sections/Sizes';
 import { StickyNav } from '@/components/sections/StickyNav';
 import { drop01 } from '@/content/drop01';
 import { dmHref } from '@/lib/dm';
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Hero hero={drop01.hero} price={drop01.price} handle={drop01.dm.handle} model={drop01.model} dmHref={dm} />
         <Features {...drop01.features} />
+        <Sizes {...drop01.sizes} />
       </main>
     </>
   );

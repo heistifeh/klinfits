@@ -1,4 +1,4 @@
-import type { Open, Placeholder } from '@/content/types';
+import type { Open, Placeholder, RangeCm } from '@/content/types';
 
 export function isPlaceholder(value: unknown): value is Placeholder {
   return typeof value === 'object' && value !== null && 'todo' in value;
@@ -12,6 +12,16 @@ export function show(value: Open<string | number>): string {
 /** 14000 → "₦14,000". A placeholder keeps the sign: "₦[YOUR PRICE]". */
 export function formatNaira(value: Open<number>): string {
   return `₦${isPlaceholder(value) ? show(value) : value.toLocaleString('en-US')}`;
+}
+
+/** [92, 96] → "92–96 cm". */
+export function formatRange([min, max]: RangeCm): string {
+  return `${min}–${max} cm`;
+}
+
+/** 67 → "67 cm". */
+export function formatCm(value: number): string {
+  return `${value} cm`;
 }
 
 /** Fills {name} tokens in copy, e.g. fill('DM @{handle}', { handle: 'klinfits' }). */

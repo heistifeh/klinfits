@@ -72,6 +72,8 @@ export type Drop01Content = {
     stockLine: string;
     fitImageAlt: string;
     product: { name: string; meta: string; imageAlt: string };
+    /** Accessible name of the S/M/L button group. */
+    pickerLabel: string;
     labels: Record<'chest' | 'waist' | 'height' | 'length' | 'stock', string>;
     stockUnit: string;
     soldOut: { pill: string; message: string };

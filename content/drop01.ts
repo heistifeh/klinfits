@@ -81,6 +81,7 @@ export const drop01: Drop01Content = {
       meta: 'Black · Short sleeve · S, M, L',
       imageAlt: 'Black Line compression tee, front view',
     },
+    pickerLabel: 'Choose a size',
     labels: {
       chest: 'Your chest',
       waist: 'Your waist',
