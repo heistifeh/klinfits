@@ -1,4 +1,5 @@
 import { Features } from '@/components/sections/Features';
+import { Footer } from '@/components/sections/Footer';
 import { GlobalBar } from '@/components/sections/GlobalBar';
 import { Hero } from '@/components/sections/Hero';
 import { HowToOrder } from '@/components/sections/HowToOrder';
@@ -19,6 +20,7 @@ export default function Home() {
         <Sizes {...drop01.sizes} />
         <HowToOrder order={drop01.order} dm={drop01.dm} delivery={drop01.delivery} totalPieces={drop01.totalPieces} dmHref={dm} />
       </main>
+      <Footer {...drop01.footer} />
     </>
   );
 }
