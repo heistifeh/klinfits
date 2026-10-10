@@ -20,7 +20,7 @@ export function Tile({ as: Tag = 'div', icon, step, title, children, className }
     <Tag className={cx('flex flex-col gap-3 rounded-tile bg-carbon px-8', icon ? 'min-h-65 py-10' : 'py-9', className)}>
       {icon && <Icon name={icon} size={32} className="text-silver-300" />}
       {step !== undefined && (
-        <span className="flex size-10 items-center justify-center rounded-pill border border-slate text-step" aria-hidden="true">
+        <span className="flex size-10.5 items-center justify-center rounded-pill border border-slate text-step" aria-hidden="true">
           {step}
         </span>
       )}

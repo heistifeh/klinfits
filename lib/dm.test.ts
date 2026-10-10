@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { DM_FALLBACK, dmHref } from './dm';
+import { DM_FALLBACK, dmHref, platformNames } from './dm';
 
 describe('dmHref', () => {
   it('opens the Instagram DM thread directly', () => {
@@ -16,5 +16,10 @@ describe('dmHref', () => {
     expect(dmHref({ platform: { todo: 'PLATFORM' }, handle: { todo: 'YOUR HANDLE' } })).toBe(DM_FALLBACK);
     expect(dmHref({ platform: 'instagram', handle: { todo: 'YOUR HANDLE' } })).toBe(DM_FALLBACK);
     expect(dmHref({ platform: { todo: 'PLATFORM' }, handle: 'klinfits' })).toBe(DM_FALLBACK);
+  });
+
+  it('names each platform for copy', () => {
+    expect(platformNames.instagram).toBe('Instagram');
+    expect(platformNames.tiktok).toBe('TikTok');
   });
 });

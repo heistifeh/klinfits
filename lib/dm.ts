@@ -10,6 +10,13 @@ const builders: Record<Platform, (handle: string) => string> = {
   x: (handle) => `https://x.com/${encodeURIComponent(handle)}`,
 };
 
+/** How each platform is written in copy ("on Instagram"). */
+export const platformNames: Record<Platform, string> = {
+  instagram: 'Instagram',
+  tiktok: 'TikTok',
+  x: 'X',
+};
+
 /** Until the platform and handle are confirmed, DM buttons scroll to "How to order". */
 export const DM_FALLBACK = '#order';
 
