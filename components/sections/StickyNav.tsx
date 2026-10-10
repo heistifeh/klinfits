@@ -25,7 +25,8 @@ export function StickyNav({ title, links, cta, dmHref }: StickyNavProps) {
               {link.label}
             </a>
           ))}
-          <PillButton href={dmHref} size="nav">
+          {/* 8px more before the pill, so the last text link keeps ~24px of space. */}
+          <PillButton href={dmHref} size="nav" className="sm:ml-2">
             {cta}
           </PillButton>
         </div>
