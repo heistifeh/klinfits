@@ -80,6 +80,13 @@
   }
 }
 
+/* Page side margin from the design: 16px on phones, 24px from 600px up.
+   Never narrower than the iPhone safe area (landscape notch). */
+@utility px-page {
+  padding-left: max(clamp(1rem, 4vw, 1.5rem), env(safe-area-inset-left));
+  padding-right: max(clamp(1rem, 4vw, 1.5rem), env(safe-area-inset-right));
+}
+
 /* The one accent: the metallic silver gradient. */
 @utility bg-silver {
   background-image: linear-gradient(

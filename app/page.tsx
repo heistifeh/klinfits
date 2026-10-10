@@ -1,12 +1,18 @@
-import { SectionHeading } from '@/components/ui/SectionHeading';
+import { GlobalBar } from '@/components/sections/GlobalBar';
+import { Hero } from '@/components/sections/Hero';
+import { StickyNav } from '@/components/sections/StickyNav';
 import { drop01 } from '@/content/drop01';
+import { dmHref } from '@/lib/dm';
 
-// Placeholder until the Drop 01 sections are built.
 export default function Home() {
+  const dm = dmHref(drop01.dm);
   return (
-    <main className="mx-auto flex min-h-dvh max-w-content flex-col justify-center gap-6 px-4 sm:px-6">
-      <SectionHeading as="h1" size="hero" lines={drop01.hero.headline} silverLine={1} />
-      <p className="text-lead text-ash">{drop01.brand.tagline}</p>
-    </main>
+    <>
+      <GlobalBar brand={drop01.brand.name} note={drop01.globalBar.note} />
+      <StickyNav {...drop01.nav} dmHref={dm} />
+      <main>
+        <Hero hero={drop01.hero} price={drop01.price} handle={drop01.dm.handle} model={drop01.model} dmHref={dm} />
+      </main>
+    </>
   );
 }

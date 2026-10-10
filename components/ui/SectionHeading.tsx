@@ -33,17 +33,24 @@ export function SectionHeading({
   id,
   className,
 }: SectionHeadingProps) {
+  const alignClass = align === 'center' ? 'text-center' : undefined;
+  const heading = (
+    <Tag id={id} className={cx('font-display uppercase', sizes[size], !eyebrow && alignClass, !eyebrow && className)}>
+      {lines.map((line, i) => (
+        <Fragment key={line}>
+          {i > 0 && <br />}
+          {i === silverLine ? <span className="text-silver">{line}</span> : line}
+        </Fragment>
+      ))}
+    </Tag>
+  );
+  // Without an eyebrow there's nothing to group, so the parent's spacing applies.
+  if (!eyebrow) return heading;
+
   return (
-    <div className={cx('flex flex-col gap-4', align === 'center' ? 'items-center text-center' : 'items-start', className)}>
-      {eyebrow && <p className="text-eyebrow text-silver-300">{eyebrow}</p>}
-      <Tag id={id} className={cx('font-display uppercase', sizes[size])}>
-        {lines.map((line, i) => (
-          <Fragment key={line}>
-            {i > 0 && <br />}
-            {i === silverLine ? <span className="text-silver">{line}</span> : line}
-          </Fragment>
-        ))}
-      </Tag>
+    <div className={cx('flex flex-col gap-4', align === 'center' ? 'items-center' : 'items-start', alignClass, className)}>
+      <p className="text-eyebrow text-silver-300">{eyebrow}</p>
+      {heading}
     </div>
   );
 }

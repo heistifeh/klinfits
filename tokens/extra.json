@@ -7,7 +7,7 @@
     { "name": "display-band", "family": "display", "fluid": [36, 56], "fluidViewports": [390, 1120], "lineHeight": 1, "fontWeight": 600, "sample": "BUILT FOR THE SESSION.", "usage": "Heading over the mood-gym band. Design: 36px to 56px." },
     { "name": "display-sub", "override": true, "family": "display", "fluid": [32, 44], "fluidViewports": [390, 1100], "lineHeight": 1, "fontWeight": 600, "sample": "ONLY 14 IN DROP 01.", "usage": "CTA block heading. Design: 32px to 44px." },
     { "name": "advice", "family": "sans", "fontSize": "19px", "lineHeight": 1.5, "fontWeight": 400, "sample": "It sits close so it shows your shape, and it stretches so it never feels restrictive.", "usage": "Sizing advice paragraph, in ash." },
-    { "name": "price", "family": "sans", "fontSize": "21px", "lineHeight": 1.2, "fontWeight": 500, "sample": "₦14,000", "usage": "Hero price." },
+    { "name": "price", "family": "sans", "fontSize": "21px", "lineHeight": 1.33, "fontWeight": 500, "sample": "₦14,000", "usage": "Hero price." },
     { "name": "note", "family": "sans", "fontSize": "14px", "lineHeight": 1.3, "fontWeight": 500, "sample": "Drop 01: S · M · L. No XL yet.", "usage": "Stock line, badge value and nav button (both semibold)." },
     { "name": "micro", "family": "sans", "fontSize": "12px", "lineHeight": 1.4, "fontWeight": 400, "sample": "Orders by DM", "usage": "Global bar note, \"On me\" label, footer note, sold-out pill label." },
     { "name": "step", "family": "sans", "fontSize": "15px", "lineHeight": 1, "fontWeight": 600, "sample": "1", "usage": "Numbers in the step circles." }

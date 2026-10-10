@@ -47,6 +47,7 @@ export const drop01: Drop01Content = {
     secondaryCta: 'Find your size',
     imageAlt: 'Tife wearing the Black Line compression tee, mirror selfie after training',
     onMeLabel: 'On me',
+    onMeValue: 'Size {size} · {height}',
   },
   features: {
     heading: 'Built for the session.',

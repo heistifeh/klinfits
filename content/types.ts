@@ -58,6 +58,8 @@ export type Drop01Content = {
     secondaryCta: string;
     imageAlt: string;
     onMeLabel: string;
+    /** Uses {size} and {height}. */
+    onMeValue: string;
   };
   features: {
     heading: string;
