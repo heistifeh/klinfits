@@ -14,16 +14,19 @@ Read [HANDOFF.md](klinfits-handoff/HANDOFF.md) at the start of any build session
 | [design/design-system-README.md](klinfits-handoff/design/design-system-README.md) | Brand book: principles, voice, token usage, patterns, icons, logo, accessibility |
 | [docs/apple-design-guide.md](klinfits-handoff/docs/apple-design-guide.md) | Apple HIG numbers and the pre-handover checklist (section 7) |
 | [docs/Klinfits-Drop01-Sizes-and-Copy.xlsx](klinfits-handoff/docs/Klinfits-Drop01-Sizes-and-Copy.xlsx) | Size guide, copy changes, animation options |
-| `klinfits-handoff/public/` | Fonts, images, icons. Copy into the app's `public/` when scaffolding |
+| `klinfits-handoff/public/` | Original assets. Images and icons are copied into `public/`, fonts into `assets/fonts/` |
 
 The design file references `/_blob/...` canvas uploads. Replace them using the table in HANDOFF.md ("Image URLs in the design file").
 
 ## Stack
 
-- Next.js (App Router) + TypeScript + Tailwind. GSAP (+ ScrollTrigger) for motion.
-- Self-host every font, image and icon from `public/`. No Google Fonts, no Fontshare CSS link, no icon CDN.
-- Fonts load via `@font-face` from `/fonts/*.woff2` with the fallback stacks in tokens.json.
-- Font files are gitignored (the ITF licence bans sharing them through a public repo; github.com/heistifeh/klinfits is public). Never commit them or remove that ignore rule.
+- Next.js 16 (App Router, Turbopack) + TypeScript + Tailwind v4. GSAP (+ ScrollTrigger) for motion. Read `AGENTS.md` and the bundled Next docs before using an unfamiliar API.
+- Self-host every font, image and icon. No Google Fonts, no Fontshare CSS link, no icon CDN.
+- Tokens: edit `klinfits-handoff/design/tokens.json` or `tokens/extra.json`, then `npm run tokens` (writes `app/theme.css` + `tokens/resolved.json`; never edit those by hand). In TS, read values via `lib/tokens.ts`.
+- `npm run check:tokens` fails on hex colours or font names outside `app/theme.css` / `app/fonts.ts`. Run it with `lint`, `typecheck` and `build` before calling work done.
+- Fonts: `app/fonts.ts` (next/font/local) loads `assets/fonts/*.woff2`. Not in `public/`, so only next/font's hashed copies are served.
+- Font files are gitignored while github.com/heistifeh/klinfits is public (the ITF licence bans redistribution). Only remove that ignore rule after `gh repo view heistifeh/klinfits --json visibility` says PRIVATE.
+- Logos: `npm run logos` rebuilds `public/images/kf-mark.png`, `klinfits-lockup.png`, `app/icon.png` and `app/apple-icon.png` from the handoff PNG (crop/resize only).
 
 ## Brand rules
 
