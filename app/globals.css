@@ -87,6 +87,18 @@
   padding-right: max(clamp(1rem, 4vw, 1.5rem), env(safe-area-inset-right));
 }
 
+/* Darkens the mood-gym photo so it reads as atmosphere, never as the product.
+   Never lighter than 74% black (design: 92% → 74% → 74% → 95%). */
+@utility bg-mood-overlay {
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-black) 92%, transparent) 0%,
+    color-mix(in srgb, var(--color-black) 74%, transparent) 35%,
+    color-mix(in srgb, var(--color-black) 74%, transparent) 65%,
+    color-mix(in srgb, var(--color-black) 95%, transparent) 100%
+  );
+}
+
 /* The one accent: the metallic silver gradient. */
 @utility bg-silver {
   background-image: linear-gradient(
