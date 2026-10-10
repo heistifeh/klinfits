@@ -7,6 +7,7 @@ Read [HANDOFF.md](klinfits-handoff/HANDOFF.md) at the start of any build session
 
 | File | Use it for |
 | --- | --- |
+| [docs/BUILD-PLAN.md](docs/BUILD-PLAN.md) | Agreed build plan and Tife's decisions. Follow its build order; its decisions override the handoff where they differ |
 | [HANDOFF.md](klinfits-handoff/HANDOFF.md) | Scope, page sections, size table, open questions, motion plan, image URL swaps |
 | [design/drop01-page.dc.html](klinfits-handoff/design/drop01-page.dc.html) | Approved design. Source of truth for layout, copy and styles. Rebuild as React; never ship it as is |
 | [design/tokens.json](klinfits-handoff/design/tokens.json) | Colours, type styles, spacing, radii. Map into the Tailwind theme; don't hard-code hex values in components |
