@@ -65,6 +65,7 @@ async function main() {
     const fitted = await sharp(markBuffer).resize({ width: inner, height: inner, fit: 'inside' }).toBuffer();
     await sharp({ create: { width: size, height: size, channels: 3, background: black } })
       .composite([{ input: fitted, gravity: 'center' }])
+      .removeAlpha() // Apple touch icons must be opaque
       .png(PNG)
       .toFile(`${root}${file}`);
   }
