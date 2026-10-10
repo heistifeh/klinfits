@@ -1,16 +1,12 @@
 @import "tailwindcss";
 @import "./theme.css";
 
-/* Hover that only fires on devices with a real pointer. data-demo="hover"
-   lets /styleguide show the state without a mouse. */
+/* Hover that only fires on devices with a real pointer. */
 @custom-variant hovered {
   @media (hover: hover) {
     &:hover {
       @slot;
     }
-  }
-  &[data-demo="hover"] {
-    @slot;
   }
 }
 
@@ -40,20 +36,17 @@
 
   /* Pressed state on every link and button. */
   a:active,
-  button:active,
-  [data-demo="pressed"] {
+  button:active {
     transform: scale(0.97);
     opacity: 0.85;
   }
 
   /* Focus ring: 2px porcelain on dark, black on the light spec card. */
-  :focus-visible,
-  [data-demo="focus"] {
+  :focus-visible {
     outline: 2px solid var(--color-porcelain);
     outline-offset: 3px;
   }
-  [data-surface="light"] :focus-visible,
-  [data-surface="light"] [data-demo="focus"] {
+  [data-surface="light"] :focus-visible {
     outline-color: var(--color-black);
   }
 
@@ -73,8 +66,7 @@
     }
     /* Keep the pressed feedback, drop the movement. */
     a:active,
-    button:active,
-    [data-demo="pressed"] {
+    button:active {
       transform: none;
     }
   }
