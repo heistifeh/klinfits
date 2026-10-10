@@ -11,7 +11,8 @@
     "tokens": "node scripts/build-tokens.mjs",
     "check:tokens": "node scripts/check-tokens.mjs",
     "typecheck": "next typegen && tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "verify": "npm run check:tokens && npm run typecheck && npm run lint && npm test && npm run build"
   },
   "dependencies": {
     "next": "16.4.0",
@@ -19,7 +20,7 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "@tailwindcss/turbopack": "^4",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^24.19.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
