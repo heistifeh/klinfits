@@ -10,7 +10,7 @@ A working summary of Apple's Human Interface Guidelines (HIG), written as rules 
 ## When to use
 
 - Any app or mobile screen: iOS, iPadOS, React Native / Expo, Flutter, mobile web, app mockups.
-- The Klinfits website (the Drop 01 page and anything after it). Use the web mapping below, and let the Klinfits design system win on brand choices (Anton headlines, silver accent, black grounds).
+- The Klinfits website (the Drop 01 page and anything after it). Use the web mapping below, and let the Klinfits design system win on brand choices (Clash Display headlines, Switzer text, silver accent, black grounds).
 - Use it while designing, then run the checklist at the end before handing the design over.
 
 ## 1. Tap targets and control size
@@ -158,7 +158,7 @@ The HIG is written for apps, so on the web treat 1 pt as 1 CSS px and apply it l
 - Contrast: 4.5:1 for text up to 17 px, 3:1 at 18 px and up or bold. Use the Klinfits README's guaranteed pairs (porcelain on black, ash on black or carbon, black on the silver gradient).
 - At most one or two silver (prominent) buttons per screen area.
 - Phone width first: design at 390 px wide with 16 px side margins, then widen. Keep the sticky nav clear of the iPhone safe area (use `env(safe-area-inset-*)` with `viewport-fit=cover`).
-- Brand choices (Anton, uppercase headlines, silver gradient, black grounds) come from the Klinfits design system and override Apple's look; the numbers above still apply.
+- Brand choices (Clash Display uppercase headlines, Switzer text, silver gradient, black grounds) come from the Klinfits design system and override Apple's look; the numbers above still apply.
 
 ## 7. Checklist before handing over a design
 

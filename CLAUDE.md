@@ -30,7 +30,6 @@ The design file references `/_blob/...` canvas uploads. Replace them using the t
 - **Text:** `porcelain` #F5F5F7 main, `ash` #86868B muted, `silver-300` #B8B8B8 eyebrows and icons.
 - **One accent:** silver gradient `silver-100` #E8E8E8 → `silver-300` #B8B8B8 → `silver-500` #7A7A7A, label in `on-silver` (black). Only on the main button and at most one headline phrase. No other colour, anywhere.
 - **Type:** Clash Display Semibold 600, always uppercase, leading 0.95–1, for headlines; Clash Display Medium 500 for the KLINFITS wordmark only. Switzer 400/500/600 for everything else, in sentence case. No third family, no other weights.
-  - The Apple guide mentions "Anton" headlines. That is outdated: the design system (Clash Display) wins.
 - **Shape:** 28px radius (`radius-tile`) on tiles and photos, full pills for buttons and badges. Flat: no shadows. Separate sections by surface colour and 1px `steel` hairlines.
 - **Icons:** Iconify Tabler set only, 1.5 stroke (Tabler ships at 2), 24px grid shown at 24–32px, `silver-300`, `currentColor`, no fills, no emoji. Never hand-draw or generate an icon. In use: droplet, shirt-sport, needle-thread, camera.
 - **Logo:** KF mark on black only, 32px in the global bar, up to 160px in the footer. Never recolour, stretch or put it on the light card.
