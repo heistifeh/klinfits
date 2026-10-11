@@ -230,7 +230,7 @@ Only `SizePicker` (and its children) and `PageMotion` run on the client.
 - `SizePicker` owns `useState<SizeId>(defaultSize)`. React is the source of truth; GSAP only animates between states.
 - Built now with the hooks motion needs later: a separate indicator pill moved by `--i` and `translateX`, every number going through `RollingNumber`, and a `ref` plus `data-size` on the thumbnail.
 - **Sold out (stock 0):**
-  - The pill stays a selectable `<button aria-pressed>`.
+  - The pill stays a selectable radio (`role="radio"` with `aria-checked`).
   - It shows the size letter with "Sold out" under it in 12px (`micro`). A pill reading only "Sold out" wouldn't say which size, and two sold-out sizes would look the same.
   - Its accessible name is "S, sold out".
   - When it's selected, the "In Drop 01" cell spans the full grid width and reads "Sold out. DM to be first for the next drop." The measurements stay visible.
@@ -304,7 +304,7 @@ Each step is one commit, reviewed before the next.
 10. **Sizes, without motion.**
     *Done means:*
     - S/M/L update all five cells, with M selected by default.
-    - `aria-pressed` is right and it works by keyboard.
+    - `aria-checked` is right and it works by keyboard.
     - Setting a size's stock to 0 in `drop01.ts` shows "Sold out" on its pill, keeps it selectable, and shows the sold-out message in the card.
 11. **How to order and CTA.**
     *Done means:* the order heading reads "No waiting weeks for a parcel." with no silver, the steps are an `<ol>`, all three DM buttons use `dmHref`, and "Only 14" comes from `totalPieces`.

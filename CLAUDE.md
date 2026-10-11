@@ -78,7 +78,7 @@ Web mapping: 1pt = 1 CSS px. Full detail in [apple-design-guide.md §7](klinfits
 1. Every link and button has a hit area of at least 44 × 44px (pills are 48px, 44px in the nav), with ~12px around filled pills and ~24px around text links and icon buttons.
 2. Body 17px, captions 13px, nothing under 11px.
 3. Contrast: 4.5:1 for text up to 17px, 3:1 at 18px+ or bold, 3:1 for control borders, icons and focus rings. Stick to the README's guaranteed pairs.
-4. No state shown by colour alone. The selected size uses a filled pill and `aria-pressed`.
+4. No state shown by colour alone. The selected size uses a filled pill and `aria-checked` (radio group).
 5. Works at 200% browser zoom: no overlap, no horizontal scroll.
 6. Phone first at 390px wide, 16px margins, widening to 24px. `viewport-fit=cover` + `env(safe-area-inset-*)` keep the sticky nav clear of the notch.
 7. At most two silver buttons in view; verb labels; real `<button>`/`<a>` elements.

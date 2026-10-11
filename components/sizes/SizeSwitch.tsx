@@ -16,8 +16,9 @@ type SizeSwitchProps = {
 const NEXT_KEYS = ['ArrowRight', 'ArrowDown'];
 const PREV_KEYS = ['ArrowLeft', 'ArrowUp'];
 
-// Segmented S/M/L switch: a group of toggle buttons (aria-pressed). Only the
-// selected one is in the Tab order; arrow keys, Home and End move the selection.
+// Segmented S/M/L switch with radio-group semantics: one option is always
+// checked. Only the checked one is in the Tab order; arrow keys, Home and End
+// move the selection.
 export function SizeSwitch({ sizes, index, onSelect, label, soldOutLabel }: SizeSwitchProps) {
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -38,7 +39,7 @@ export function SizeSwitch({ sizes, index, onSelect, label, soldOutLabel }: Size
 
   return (
     <div
-      role="group"
+      role="radiogroup"
       aria-label={label}
       onKeyDown={onKeyDown}
       className="relative grid grid-cols-3 gap-1 rounded-pill bg-mist p-1"
@@ -51,7 +52,7 @@ export function SizeSwitch({ sizes, index, onSelect, label, soldOutLabel }: Size
         style={{ transform: `translateX(calc(${index} * (100% + 0.25rem)))` }}
       />
       {sizes.map((size, i) => {
-        const pressed = i === index;
+        const checked = i === index;
         const soldOut = isSoldOut(size);
         return (
           <button
@@ -60,13 +61,14 @@ export function SizeSwitch({ sizes, index, onSelect, label, soldOutLabel }: Size
               buttons.current[i] = el;
             }}
             type="button"
+            role="radio"
+            aria-checked={checked}
             aria-label={soldOut ? `${size.id}, ${soldOutLabel}` : undefined}
-            aria-pressed={pressed}
-            tabIndex={pressed ? 0 : -1}
+            tabIndex={checked ? 0 : -1}
             onClick={() => onSelect(size.id)}
             className={cx(
               'relative flex min-h-12 cursor-pointer flex-col items-center justify-center rounded-pill text-button',
-              pressed ? 'text-porcelain' : 'text-carbon',
+              checked ? 'text-porcelain' : 'text-carbon',
             )}
           >
             {size.id}

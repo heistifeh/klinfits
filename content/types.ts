@@ -82,8 +82,8 @@ export type Drop01Content = {
   };
   order: {
     eyebrow: string;
-    /** Plain heading, no silver. */
-    heading: readonly [string, string];
+    /** Plain heading, no silver. One entry per line. */
+    heading: readonly string[];
     steps: readonly { title: Open<string>; body: string }[];
     cta: { heading: string; body: string; button: string };
   };

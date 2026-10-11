@@ -103,7 +103,7 @@ export const drop01: Drop01Content = {
   order: {
     eyebrow: 'How to get it',
     // UPDATE WHEN STOCK LANDS: only true once the shirts are in Nigeria.
-    heading: ['No waiting weeks', 'for a parcel.'],
+    heading: ['Skip the wait.'],
     steps: [
       { title: 'DM your size', body: 'Send "KF" plus your size and area to @{handle} on {platform}.' },
       {
